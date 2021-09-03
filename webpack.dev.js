@@ -8,6 +8,6 @@ module.exports = merge(common, {
   devServer: {
     static: path.resolve(__dirname, 'public'),
     port: 8080,
-    historyApiFallback: true,
+    historyApiFallback: true
   },
 });
