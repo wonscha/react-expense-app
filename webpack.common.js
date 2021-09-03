@@ -18,7 +18,16 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      use: ['babel-loader'],
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            "@babel/preset-env",
+            "@babel/preset-react"
+          ],
+          plugins: ["@babel/plugin-transform-runtime"]
+        }
+      },
       exclude: /node_modules/
     }, {
       test: /\.s?[ac]ss$/i,
@@ -27,11 +36,6 @@ module.exports = {
         'css-loader',
         'sass-loader'
       ],
-    }, {
-      test: /\.png$/,
-      use: [
-
-      ]
     }]
   }
 };
