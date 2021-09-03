@@ -9,7 +9,10 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      favicon: './src/images/favicon.png'
+    }),
     new MiniCssExtractPlugin({ filename: 'styles.css' })
   ],
   module: {
@@ -24,6 +27,11 @@ module.exports = {
         'css-loader',
         'sass-loader'
       ],
+    }, {
+      test: /\.png$/,
+      use: [
+
+      ]
     }]
   }
 };
