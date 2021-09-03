@@ -7,7 +7,7 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [new MiniCssExtractPlugin({ filename: 'styles.css' })],
   module: {
     rules: [{
       test: /\.js$/,
